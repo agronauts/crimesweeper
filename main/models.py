@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+class Area(models.Model):
+    lat = models.FloatField()
+    long = models.FloatField()
+    crime_rate = models.IntegerField()
+
+
