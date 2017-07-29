@@ -1,30 +1,25 @@
+from collections import namedtuple
+
 import pandas as pd
 
 from django.shortcuts import render
 
-from main.models import Area
 
+Area = namedtuple('Area', ['name', 'lat', 'long', 'crimes'])
 
 def home(request):
     return render(request, 'index.html')
 
 
+def get_coord_for_area(area):
+    return -36.8617074, 174.3050262
+
+
 def extract_area_data():
-    crime_types = {
-        'Abduction and Kidnapping',
-        'Assault',
-        'Blackmail and Extortion',
-        'Illegal Use of Property (Except Motor Vehicles)',
-        'Motor Vehicle Theft and Related Offences',
-        'Robbery',
-        'Sexual Assault',
-        'Theft (Except Motor Vehicles)'
-    }
     crime_d = pd.read_csv(open('./crime_data.csv'), quotechar='"', skipinitialspace=True, header=1)
-    d2 = crime_d.groupby(['Police Area', 'ANZSOC Subdivision'])
-    for crime_item in d2.Victimisations.count().items():
-        print(crime_item)
-    return [Area(lat=-36.8617074, long=174.3050262, crime_rate=40) for _ in range(3)]
+    areas = set(crime_d['Police Area'].values)
+    coords = {get_coord_for_area(area) for area in areas }
+    return [Area(name, lat, long, crimes=[]) for name, (lat, long) in zip(areas, coords)]
 
 
 def map(request):

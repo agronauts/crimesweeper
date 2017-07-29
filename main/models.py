@@ -5,4 +5,8 @@ class Area(models.Model):
     long = models.FloatField()
     crime_rate = models.IntegerField()
 
+class CrimeType(models.Model):
+    crime_type = models.CharField(max_length=60)
+    crimes = models.IntegerField()
+
 
