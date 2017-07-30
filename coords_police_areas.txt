@@ -1,0 +1,37 @@
+Auckland Central
+Auckland East
+Auckland Motorways
+Auckland West
+Canterbury Metro
+Counties Manukau Central
+Counties Manukau East
+Counties Manukau South
+Counties Manukau West
+Eastern Bay Of Plenty
+Far North
+Hamilton City
+Hawkes Bay
+Hutt Valley
+Kapiti-Mana
+Manawatu
+Marlborough
+Mid / South Canterbury
+Nelson Bays
+North Shore
+Otago Coastal
+Otago Lakes Central
+Rodney
+Rotorua
+Southland
+Tairawhiti
+Taranaki
+Taupo
+Waikato East
+Waikato West
+Wairarapa
+Waitakere
+Wellington
+West Coast
+Western Bay Of Plenty
+Whanganui
+Whangarei
